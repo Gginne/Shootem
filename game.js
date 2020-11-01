@@ -203,7 +203,7 @@ function draw() {
     context.fillStyle = '#FF0000';
     context.font = '12px Arial';
     context.textAlign = 'center';
-    context.fillText(`${enemy.health}`, enemy.x+enemy.l/2, enemy.y-enemy.l/4);  
+    context.fillText(`${enemy.health}`, enemy.x+enemy.l/2, enemy.y-enemy.l/2);  
     
     
   });
