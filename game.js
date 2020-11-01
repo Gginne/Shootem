@@ -2,7 +2,7 @@ var canvas = document.getElementById('canvas');
 // Get the canvas drawing context
 var context = canvas.getContext('2d');
 
-// Create an object representing a square on the canvas
+// Create an object representing a character on the canvas
 function makeCharacter(x, y, length, speed, health=1, type="ship", move="normal") {
   return {
     x: x,
@@ -43,8 +43,6 @@ var space = false;
 var shooting = false;
 // The bulled shot from the ship
 var bullet = makeCharacter(0, 0, 15, 15, 1, "bullet");
-//MOD 1 ENEMY SHOOTS
-var enemyBullet = makeCharacter(0, 0, 10, 10);
 // An array for enemies (in case there are more than one)
 var enemies = [];
 
