@@ -3,7 +3,7 @@ var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
 // Create an object representing a square on the canvas
-function makeSquare(x, y, length, speed, health=1, type="ship", move="normal") {
+function makeCharacter(x, y, length, speed, health=1, type="ship", move="normal") {
   return {
     x: x,
     y: y,
@@ -32,7 +32,7 @@ function makeSquare(x, y, length, speed, health=1, type="ship", move="normal") {
 }
 
 // The ship the user controls
-var ship = makeSquare(50, canvas.height / 2 - 25, 45, 5);
+var ship = makeCharacter(50, canvas.height / 2 - 25, 45, 5);
 
 // Flags to tracked which keys are pressed
 var up = false;
@@ -42,9 +42,9 @@ var space = false;
 // Is a bullet already on the canvas?
 var shooting = false;
 // The bulled shot from the ship
-var bullet = makeSquare(0, 0, 15, 15, 1, "bullet");
+var bullet = makeCharacter(0, 0, 15, 15, 1, "bullet");
 //MOD 1 ENEMY SHOOTS
-var enemyBullet = makeSquare(0, 0, 10, 10);
+var enemyBullet = makeCharacter(0, 0, 10, 10);
 // An array for enemies (in case there are more than one)
 var enemies = [];
 
@@ -59,7 +59,7 @@ function makeEnemy() {
   
   var enemyY = move == "diagonal" ? (enemySpeed > 0 ? (canvas.height - enemySize) : 0) : Math.round(Math.random() * (canvas.height - enemySize * 2)) + enemySize;
   var enemyHealth = Math.floor(score/5) + 1
-  enemies.push(makeSquare(enemyX, enemyY, enemySize, enemySpeed, enemyHealth, "enemy", move));
+  enemies.push(makeCharacter(enemyX, enemyY, enemySize, enemySpeed, enemyHealth, "enemy", move));
 }
 
 // Check if number a is in the range b to c (exclusive)
